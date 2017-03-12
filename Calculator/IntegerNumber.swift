@@ -11,14 +11,14 @@ import Foundation
 
 public class IntegerNumber: Number {
     
-    private var val: Int
+    private var val: Int64
     
     /**
         CONSTRUCTOR
         
         @param x:   the initial value of the number
      */
-    public init(x: Int) {
+    public init(x: Int64) {
         self.val  = x
         super.init()
     }
@@ -48,10 +48,15 @@ public class IntegerNumber: Number {
         Method that adds a digit to the number
         
         @param digit:   the new digit to be inserted at the end of the number, as a string
+        @throws:        NumberException.OverflowException - if it overflows
+
     */
-    public func addDigit(digit dStr:String) {
+    public func addDigit(digit dStr:String) throws {
         let digit = (dStr as NSString).intValue
-        self.val = self.val*10 + Int(digit)
+        
+        self.val = try self.multInts(self.val, 10)
+        self.val = try self.addInts(self.val, Int64(digit))
+        
     }
     
     /**
@@ -85,6 +90,71 @@ public class IntegerNumber: Number {
     */
     public func isZero() -> Bool {
         return (val == 0)
+    }
+    
+    /**
+        Method that executes a given operation
+     
+        @param operation:   the operation to be performed
+        @param otherTerm:   the other term we use in the operation
+        @throws:        NumberException.OverflowException - if it overflows
+
+    */
+    public func exec(operation op: String, otherTerm other: IntegerNumber?) throws{
+        
+        switch op {
+        case "+":
+            try self.add(other!)
+        default:
+            print("not done yet")
+        }
+        
+    }
+    
+    /**
+        Function that tries to multiply 2 integers and throws and error if it overflows
+     
+        @param lhs:     The LHS term of the multiplication
+        @param rhs:     The RHS term of the multiplication
+        @returns:       The result of the multiplication
+        @throws:        NumberException.OverflowException - if it overflows
+    */
+    private func multInts(_ lhs:Int64, _ rhs:Int64) throws -> Int64 {
+        let tuple = Int64.multiplyWithOverflow(lhs, rhs)
+        if tuple.1 {
+            print("overflow")
+            throw NumberException.OverflowException
+        }
+        return tuple.0
+    }
+    
+    /**
+        Function that tries to add 2 integers and throws an error if it overflows
+     
+        @param lhs:     The LHS term of the addition
+        @param rhs:     The RHS term of the addtion
+        @returns:       The result of the addtion
+        @throws:        NumberException.OverflowException - if it overflows
+    */
+    private func addInts(_ lhs:Int64, _ rhs:Int64) throws -> Int64 {
+        let tuple = Int64.addWithOverflow(lhs, rhs)
+        if tuple.1 {
+            print("overflow")
+            throw NumberException.OverflowException
+        }
+        return tuple.0
+    }
+    
+    
+    /**
+        Method that adds a number to our current number and stores the value
+     
+        @param other :      The number we want to add to our current value
+        @throws:        NumberException.OverflowException - if it overflows
+
+    */
+    private func add(_ other: IntegerNumber) throws{
+        self.val = try self.addInts(self.val, other.val)
     }
     
 }

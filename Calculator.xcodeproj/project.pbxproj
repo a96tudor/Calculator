@@ -14,6 +14,7 @@
 		CD3FFBDC1E75AA6800440E15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3FFBDA1E75AA6800440E15 /* LaunchScreen.storyboard */; };
 		CD3FFBE61E75BB3400440E15 /* IntegerNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FFBE51E75BB3400440E15 /* IntegerNumber.swift */; };
 		CD3FFBE81E75C1D700440E15 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FFBE71E75C1D700440E15 /* Number.swift */; };
+		CD3FFBEB1E75F37700440E15 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FFBEA1E75F37700440E15 /* Exceptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CD3FFBDD1E75AA6800440E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD3FFBE51E75BB3400440E15 /* IntegerNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerNumber.swift; sourceTree = "<group>"; };
 		CD3FFBE71E75C1D700440E15 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		CD3FFBEA1E75F37700440E15 /* Exceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				CD3FFBE51E75BB3400440E15 /* IntegerNumber.swift */,
 				CD3FFBE71E75C1D700440E15 /* Number.swift */,
+				CD3FFBEA1E75F37700440E15 /* Exceptions.swift */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3FFBE81E75C1D700440E15 /* Number.swift in Sources */,
+				CD3FFBEB1E75F37700440E15 /* Exceptions.swift in Sources */,
 				CD3FFBD41E75AA6800440E15 /* ViewController.swift in Sources */,
 				CD3FFBD21E75AA6800440E15 /* AppDelegate.swift in Sources */,
 				CD3FFBE61E75BB3400440E15 /* IntegerNumber.swift in Sources */,

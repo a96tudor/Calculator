@@ -22,7 +22,11 @@ class ViewController: UIViewController {
     @IBAction func digitButtonAction (_ sender: UIButton) {
         let newDigit = sender.currentTitle!
         
-        curNumber.addDigit(digit: newDigit)
+        do {
+            try curNumber.addDigit(digit: newDigit)
+        } catch {
+            // DO NOTHING :D
+        }
         updateLabel()
     }
     
