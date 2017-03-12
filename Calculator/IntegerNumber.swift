@@ -1,5 +1,5 @@
 //
-//  Number.swift
+//  IntegerNumber.swift
 //  Calculator
 //
 //  Created by Tudor Avram on 12/03/17.
@@ -104,7 +104,11 @@ public class IntegerNumber: Number {
         
         switch op {
         case "+":
-            try self.add(other!)
+            self.val = try self.addInts(self.val, other!.val)
+        case "-":
+            self.val = try self.subInts(other!.val, self.val)
+        case "*":
+            self.val = try self.multInts(other!.val, self.val)
         default:
             print("not done yet")
         }
@@ -129,6 +133,22 @@ public class IntegerNumber: Number {
     }
     
     /**
+        Function that substracts two Int64 numbers and throws an error if it overflows
+        
+        @param lhs:     The number to substract from
+        @param rhs:     The number to substract
+        @throws:        NumberException.OverflowException - if it overflows
+    */
+    private func subInts(_ lhs: Int64, _ rhs: Int64) throws -> Int64 {
+        let tuple = Int64.subtractWithOverflow(lhs, rhs)
+        if tuple.1 {
+            print("overflow")
+            throw NumberException.OverflowException
+        }
+        return tuple.0
+    }
+    
+    /**
         Function that tries to add 2 integers and throws an error if it overflows
      
         @param lhs:     The LHS term of the addition
@@ -143,18 +163,6 @@ public class IntegerNumber: Number {
             throw NumberException.OverflowException
         }
         return tuple.0
-    }
-    
-    
-    /**
-        Method that adds a number to our current number and stores the value
-     
-        @param other :      The number we want to add to our current value
-        @throws:        NumberException.OverflowException - if it overflows
-
-    */
-    private func add(_ other: IntegerNumber) throws{
-        self.val = try self.addInts(self.val, other.val)
     }
     
 }

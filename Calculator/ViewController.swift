@@ -51,7 +51,12 @@ class ViewController: UIViewController {
         } else {
             if prevNumber != nil {
                 // we have to make the computation, so we use the current operator
-
+                do {
+                    try curNumber.exec(operation: sender.currentTitle!, otherTerm: prevNumber)
+                } catch {
+                    print("ERROR!!!")
+                }
+                updateLabel()
             } else {
                 if sender.currentTitle! == "=" {
                     return
