@@ -10,24 +10,59 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBAction func buttonONEAction (_ sender: UIButton) {
+    var curNumber = IntegerNumber()
+    var prevNumber: IntegerNumber? = nil
+    var curOp: String? = nil
+    
+    @IBOutlet weak var outputLabel: UILabel!
+    
+    /**
+        Action for the digit buttons
+    */
+    @IBAction func digitButtonAction (_ sender: UIButton) {
+        let newDigit = sender.currentTitle!
         
-        //let sender_name = sender.titleLabel!.text
-        let sender_name = ""
-        print(sender_name)
-        
+        curNumber.addDigit(digit: newDigit)
+        updateLabel()
     }
     
-    var curNumber  = 0
-
-    
-    func updateCurNumber(dig new_digit:Int) {
-        curNumber = curNumber * 10 + new_digit
+    /**
+        Action for the reset button
+    */
+    @IBAction func resetNumberAction(_ sender: UIButton) {
+        curNumber.reset()
+        updateLabel()
     }
     
+    /**
+        Action for the operators
+    */
+    @IBAction func operatorAction(_ sender: UIButton) {
+        if ( curNumber.isZero() ) {
+            if sender.currentTitle! == "-" {
+                // we update the sign of the number
+                curNumber.changeSign()
+            }
+            // otherwise, do nothing
+        } else {
+            if prevNumber != nil {
+                // we have to make the computation, so we use the current operator
 
-
+            } else {
+                if sender.currentTitle! == "=" {
+                    return
+                }
+                // we don't have to make the computation
+                prevNumber = IntegerNumber(old: curNumber)
+                curNumber = IntegerNumber()
+                updateLabel()
+            }
+        }
+    }
     
-
+    private func updateLabel() {
+        outputLabel.text = curNumber.getValue()
+    }
+    
 }
 

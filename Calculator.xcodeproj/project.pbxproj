@@ -12,6 +12,8 @@
 		CD3FFBD71E75AA6800440E15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3FFBD51E75AA6800440E15 /* Main.storyboard */; };
 		CD3FFBD91E75AA6800440E15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3FFBD81E75AA6800440E15 /* Assets.xcassets */; };
 		CD3FFBDC1E75AA6800440E15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3FFBDA1E75AA6800440E15 /* LaunchScreen.storyboard */; };
+		CD3FFBE61E75BB3400440E15 /* IntegerNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FFBE51E75BB3400440E15 /* IntegerNumber.swift */; };
+		CD3FFBE81E75C1D700440E15 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3FFBE71E75C1D700440E15 /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		CD3FFBD81E75AA6800440E15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD3FFBDB1E75AA6800440E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD3FFBDD1E75AA6800440E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3FFBE51E75BB3400440E15 /* IntegerNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerNumber.swift; sourceTree = "<group>"; };
+		CD3FFBE71E75C1D700440E15 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		CD3FFBD01E75AA6800440E15 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				CD3FFBE41E75BB2100440E15 /* CustomClasses */,
 				CD3FFBD31E75AA6800440E15 /* ViewController.swift */,
 				CD3FFBD51E75AA6800440E15 /* Main.storyboard */,
 				CD3FFBE31E75AB2700440E15 /* Supporting Files */,
@@ -70,6 +75,15 @@
 				CD3FFBDD1E75AA6800440E15 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD3FFBE41E75BB2100440E15 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CD3FFBE51E75BB3400440E15 /* IntegerNumber.swift */,
+				CD3FFBE71E75C1D700440E15 /* Number.swift */,
+			);
+			name = CustomClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3FFBE81E75C1D700440E15 /* Number.swift in Sources */,
 				CD3FFBD41E75AA6800440E15 /* ViewController.swift in Sources */,
 				CD3FFBD21E75AA6800440E15 /* AppDelegate.swift in Sources */,
+				CD3FFBE61E75BB3400440E15 /* IntegerNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
