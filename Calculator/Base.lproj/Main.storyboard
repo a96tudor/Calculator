@@ -21,16 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-y6-NqT">
-                                <rect key="frame" x="63" y="155" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68400278140000004" green="0.68400278140000004" blue="0.68400278140000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="1"/>
-                                <connections>
-                                    <action selector="digitButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZHi-eR-oOL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfg-TX-0QF">
                                 <rect key="frame" x="248" y="155" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -201,16 +191,50 @@
                                     <action selector="operatorAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PWv-1L-CR3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-6n-pcc">
+                                <rect key="frame" x="289" y="583" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.45973085732984298" green="0.45973085732984298" blue="0.45973085732984298" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-y6-NqT">
+                                <rect key="frame" x="63" y="155" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68400278140000004" green="0.68400278140000004" blue="0.68400278140000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="digitButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZHi-eR-oOL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="button0" destination="RuE-S1-h36" id="5N0-gJ-M6Q"/>
+                        <outlet property="button1" destination="ggS-y6-NqT" id="RIR-DJ-wza"/>
+                        <outlet property="button2" destination="6nn-OV-1Kt" id="wzw-lL-oOe"/>
+                        <outlet property="button3" destination="kfg-TX-0QF" id="uKr-tw-HUl"/>
+                        <outlet property="button4" destination="Qrl-8d-0LH" id="cFG-nR-Es1"/>
+                        <outlet property="button5" destination="YAu-Ri-u3f" id="1iK-vT-tar"/>
+                        <outlet property="button6" destination="IAR-XM-0wY" id="auu-t5-9xy"/>
+                        <outlet property="button7" destination="ZYS-oA-NVc" id="LM6-rv-haA"/>
+                        <outlet property="button8" destination="AYg-M4-Obd" id="JtF-Z7-db8"/>
+                        <outlet property="button9" destination="pk9-YE-GLK" id="suX-h4-NRq"/>
+                        <outlet property="buttonC" destination="kWB-BA-66e" id="Mh8-SE-U8J"/>
+                        <outlet property="buttonDivide" destination="xhq-0P-hSA" id="M52-qe-CGd"/>
+                        <outlet property="buttonEq" destination="Ylr-WR-mDR" id="5fA-gb-RVa"/>
+                        <outlet property="buttonMinus" destination="Osx-zM-Ol6" id="k2s-xg-apZ"/>
+                        <outlet property="buttonMult" destination="JJ1-Kz-pyt" id="qqu-I8-k1d"/>
+                        <outlet property="buttonPlus" destination="cGj-ko-3QD" id="fNz-lg-IAM"/>
+                        <outlet property="lastOperationUsed" destination="Sh4-6n-pcc" id="7tn-YQ-C8P"/>
                         <outlet property="outputLabel" destination="CFy-Fd-jMd" id="Wz8-r8-2aL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="39.945652173913047"/>
+            <point key="canvasLocation" x="34.399999999999999" y="39.130434782608695"/>
         </scene>
     </scenes>
 </document>
